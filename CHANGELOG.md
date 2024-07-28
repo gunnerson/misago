@@ -1,3 +1,8 @@
+# 1.0.1 (2024-07-28)
+
+- Disabled logging of write errors in UWSGI.
+
+
 # 1.0 (2023-06-10)
 
 - Updated PostgreSQL service to 15.3.
