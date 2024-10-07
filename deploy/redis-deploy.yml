@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-deploy
+  namespace: misago
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: misago
+      type: redis
+  template:
+    metadata:
+      labels:
+        app: misago
+        type: redis
+    spec:
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: redis-pvc
+      containers:
+        - name: redis-pod
+          image: redis:7.2
+          imagePullPolicy: IfNotPresent
+          args: ["--appendonly", "yes"]
+          env:
+            - name: ALLOW_EMPTY_PASSWORD
+              value: "yes"
+          ports:
+            - containerPort: 6379
+          volumeMounts:
+            - name: data
+              mountPath: "/data"
