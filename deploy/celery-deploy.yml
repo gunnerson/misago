@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: celery-deploy
+  namespace: misago
+  labels:
+    app: misago
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: misago
+        type: celery
+    spec:
+      volumes:
+        - name: staticfiles
+          persistentVolumeClaim:
+            claimName: static-pvc
+        - name: mediafiles
+          persistentVolumeClaim:
+            claimName: media-pvc
+        - name: logs
+          persistentVolumeClaim:
+            claimName: logs-pvc
+      containers:
+        - name: server-pod
+          image: dhr.rumatallc.com/misago-django-arm64:1.0
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: django-secret
+            - configMapRef:
+                name: django-cm
+          ports:
+            - containerPort: 3031
+          volumeMounts:
+            - name: staticfiles
+              mountPath: "/misago/static"
+            - name: mediafiles
+              mountPath: "/misago/media"
+            - name: logs
+              mountPath: "/misago/logs"
+  selector:
+    matchLabels:
+      app: misago
+      type: celery
