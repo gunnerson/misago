@@ -18,10 +18,10 @@ spec:
       volumes:
         - name: staticfiles
           persistentVolumeClaim:
-            claimName: misago-static-pvc
+            claimName: static-pvc
         - name: mediafiles
           persistentVolumeClaim:
-            claimName: misago-media-pvc
+            claimName: media-pvc
       containers:
         - name: nginx-pod
           image: dhr.rumatallc.com/misago-nginx-arm64:1.0
