@@ -20,6 +20,7 @@ RUN apt-get update && \
   apt-get clean
 
 # Make current directory available as "Misago" within docker
+
 ADD . /misago
 WORKDIR /misago
 
@@ -29,6 +30,10 @@ RUN pip install --upgrade pip && \
 
 # Bootstrap plugins
 RUN ./.run bootstrap_plugins
+
+RUN addgroup --system app && adduser --system --group app
+RUN chown -R app:app /misago
+USER app
 
 # Expose port 3031 from Docker
 EXPOSE 3031
