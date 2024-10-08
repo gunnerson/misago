@@ -7,17 +7,17 @@ ENV MISAGO_PLUGINS "/misago/plugins"
 
 # Install dependencies in one single command/layer
 RUN apt-get update && \
-    apt-get install -y --allow-unauthenticated \
-      vim \
-      libffi-dev \
-      libssl-dev \
-      libjpeg-dev \
-      libopenjp2-7-dev \
-      locales \
-      cron \
-      postgresql-client-15 \
-      gettext && \
-    apt-get clean
+  apt-get install -y --allow-unauthenticated \
+  vim \
+  libffi-dev \
+  libssl-dev \
+  libjpeg-dev \
+  libopenjp2-7-dev \
+  locales \
+  cron \
+  postgresql-client-15 \
+  gettext && \
+  apt-get clean
 
 # Make current directory available as "Misago" within docker
 ADD . /misago
@@ -25,7 +25,7 @@ WORKDIR /misago
 
 # Install requirements files
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+  pip install -r requirements.txt
 
 # Bootstrap plugins
 RUN ./.run bootstrap_plugins
@@ -34,4 +34,4 @@ RUN ./.run bootstrap_plugins
 EXPOSE 3031
 
 # Call entrypoint script to setup 
-CMD ["uwsgi", "--ini", "uwsgi.ini"]
+CMD ["uwsgi", "--ini", "uwsgi.ini"] 

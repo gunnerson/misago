@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: misago-redis-pv
+  name: misago-logs-pv
   labels:
     app: misago
 spec:
   storageClassName: ""
   capacity:
-    storage: 1Gi
+    storage: 100Mi
   accessModes:
     - ReadWriteMany
   nfs:
     server: 192.168.1.203
-    path: "/data/share/misago/redis-pv"
+    path: "/data/share/misago/logs-pv"
   mountOptions:
     - nfsvers=4.2
