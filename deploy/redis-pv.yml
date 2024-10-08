@@ -12,6 +12,6 @@ spec:
     - ReadWriteMany
   nfs:
     server: 192.168.1.203
-    path: "/data/share/redis-pv"
+    path: "/data/share/misago/redis-pv"
   mountOptions:
     - nfsvers=4.2

@@ -112,6 +112,7 @@ services:
 networks:
   misago:
 
+
 volumes:
   nginx-certs:
   nginx-html:
