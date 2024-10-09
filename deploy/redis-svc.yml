@@ -4,11 +4,10 @@ metadata:
   name: redis
   namespace: misago
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: redis
   ports:
     - protocol: TCP
       port: 6379
       targetPort: 6379
-      nodePort: 30379
