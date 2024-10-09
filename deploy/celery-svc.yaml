@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: django-svc
+  name: celery-svc
   namespace: misago
   labels:
     app: misago
@@ -9,7 +9,7 @@ spec:
   type: ClusterIP
   selector:
     app: misago
-    type: django
+    type: celery
   ports:
     - port: 3031
       targetPort: 3031
