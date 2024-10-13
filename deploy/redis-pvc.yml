@@ -10,4 +10,4 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: redis-pv
+  volumeName: misago-redis-pv
