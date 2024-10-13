@@ -5,6 +5,9 @@ metadata:
   namespace: misago
   labels:
     app: misago
+    kempLB: Enabled
+  annotations: 
+    "vsid": 8
 spec:
   type: ClusterIP
   selector:

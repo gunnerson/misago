@@ -28,7 +28,7 @@ spec:
           image: dhr.rumatallc.com/misago-django-arm64:1.0
           imagePullPolicy: Always
           command: ["celery"]
-          args: ["-A misagodocker worker --loglevel=info"]
+          args: ["-A", "misagodocker", "worker", "--loglevel=info"]
           envFrom:
             - secretRef:
                 name: django-secret
