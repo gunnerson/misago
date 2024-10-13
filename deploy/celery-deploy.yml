@@ -25,8 +25,8 @@ spec:
             claimName: logs-pvc
       containers:
         - name: server-pod
-          image: dhr.rumatallc.com/misago-django-arm64:1.0
-          imagePullPolicy: Always
+          image: misago-django-arm64:1.0
+          imagePullPolicy: Never 
           command: ["celery"]
           args: ["-A", "misagodocker", "worker", "--loglevel=info"]
           envFrom:

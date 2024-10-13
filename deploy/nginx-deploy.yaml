@@ -24,8 +24,8 @@ spec:
             claimName: media-pvc
       containers:
         - name: nginx-pod
-          image: dhr.rumatallc.com/misago-nginx-arm64:1.0
-          imagePullPolicy: Always
+          image: misago-nginx-arm64:1.0
+          imagePullPolicy: Never
           ports:
             - containerPort: 80
           volumeMounts:
