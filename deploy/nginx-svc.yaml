@@ -7,13 +7,13 @@ metadata:
     app: misago
     kempLB: Enabled
   annotations:
-    "vsid": 9
+    "vsid": "9"
 spec:
   type: ClusterIP
+  selector:
+    app: misago
+    type: proxy
   ports:
     - port: 80
       targetPort: 80
       # nodePort: 31080
-  selector:
-    app: misago
-    type: proxy
