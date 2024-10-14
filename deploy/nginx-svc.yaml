@@ -5,15 +5,11 @@ metadata:
   namespace: misago
   labels:
     app: misago
-    kempLB: Enabled
-  annotations:
-    "vsid": "8"
-spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: misago
     type: proxy
   ports:
     - port: 80
       targetPort: 80
-      # nodePort: 31080
+      nodePort: 31080
