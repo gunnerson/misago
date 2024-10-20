@@ -4,7 +4,7 @@ metadata:
   name: redis-svc
   namespace: misago
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: misago
     type: redis
@@ -12,3 +12,4 @@ spec:
     - protocol: TCP
       port: 6379
       targetPort: 6379
+      nodePort: 31379
