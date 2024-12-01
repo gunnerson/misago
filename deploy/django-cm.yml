@@ -4,9 +4,9 @@ metadata:
   name: django-cm
   namespace: misago
 data:
-  MISAGO_ADDRESS: "https://forum.rumatallc.com/"
+  MISAGO_ADDRESS: "https://forum.rumata.pub/"
   MISAGO_DAILY_BACKUP: "yes"
-  MISAGO_DEBUG: "yes"
+  MISAGO_DEBUG: "no"
   MISAGO_DEFAULT_FROM_EMAIL: "Rumata's Forum <donotreply@rumatallc.com>"
   MISAGO_EMAIL_HOST: "email-smtp.us-east-1.amazonaws.com"
   MISAGO_EMAIL_PORT: "587"
