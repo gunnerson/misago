@@ -31,8 +31,8 @@ spec:
             claimName: avatars-pvc
       containers:
         - name: server-pod
-          image: misago-django-arm64:1.0
-          imagePullPolicy: Never
+          image: dr.bwaargh.lan:5050/misago-django-arm64:1.0
+          imagePullPolicy: Always
           envFrom:
             - secretRef:
                 name: django-secret
