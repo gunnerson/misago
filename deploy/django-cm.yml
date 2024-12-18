@@ -16,7 +16,7 @@ data:
   MISAGO_LANGUAGE_CODE: "en-us"
   MISAGO_SEARCH_CONFIG: "english"
   MISAGO_TIME_ZONE: "America/Chicago"
-  VIRTUAL_HOST: "localhost 127.0.0.1 [::1] *.rumata.pub master.pi.cluster 0.0.0.0"
+  VIRTUAL_HOST: "localhost,127.0.0.1,[::1],*.rumata.pub,master.p.cluster,0.0.0.0"
   CACHE_REDIS_URL: "redis://master.pi.cluster:31379/1"
   CELERY_BROKER_URL: "redis://master.pi.cluster:31379/0"
   POSTGRES_DB: "misago_db"
